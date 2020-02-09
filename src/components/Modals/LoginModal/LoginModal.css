@@ -1,0 +1,38 @@
+.login-modal {
+  width: 340px;
+  margin: auto;
+}
+
+.label-email, .label-password {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.input-email, .input-password {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.login-form {
+  margin-bottom: 1rem;
+}
+
+.button-login { 
+  background-color: rgb(0, 201, 50);
+  border: 1px solid rgb(0, 201, 50);
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.button-login:hover {
+  background-color: rgb(0, 190, 50);
+  border: 1px solid rgb(0, 190, 50);
+}
+
+.registration, .forgot-password {
+  text-align: center;
+}
+

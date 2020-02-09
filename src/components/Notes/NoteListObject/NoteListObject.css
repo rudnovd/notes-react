@@ -1,0 +1,44 @@
+.note {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  max-width: 100%;
+  transition: background 0.25s;
+  user-select: none;
+}
+
+.note.active {
+  background: rgba(135,206,250, 0.15);
+}
+
+.note-title {
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 1.2rem;
+  height: 2rem;
+  max-height: 2rem;
+  line-height: 1.5;
+}
+
+.note-text {
+  max-height: 1.2rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  height: 1.2rem;
+}
+
+.note-placeholder {
+  opacity: 0.8;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 1.2rem;
+  max-height: 1.5rem;
+}

@@ -1,0 +1,42 @@
+.close-button {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  height: 2rem;
+  position: relative;
+  width: 2rem;
+  margin-left: auto;
+}
+
+.close-button:hover .cross-first-line,
+.close-button:hover .cross-second-line {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.close-button:active .cross-first-line,
+.close-button:active .cross-second-line {
+  transform: rotate(60deg);
+  transition: transform 0.1s;
+}
+
+.cross-first-line,
+.cross-second-line {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+}
+
+.cross-first-line {
+  height: 1px;
+  left: 0px;
+  top: 50%;
+  transform: translate(0%, -50%) rotate(45deg);
+  width: 100%;
+}
+
+.cross-second-line {
+  height: 100%;
+  left: 50%;
+  top: 0px;
+  transform: translate(-50%, 0%) rotate(45deg);
+  width: 1px;
+}

@@ -1,0 +1,43 @@
+.modal-dialog {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  outline: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.modal-dialog.show {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal {
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.3rem;
+  margin: 2rem auto 2rem auto;
+  min-width: 320px;
+  max-width: 1024px;
+  min-height: 30%;
+  outline: 0;
+  width: 90%;
+}
+
+.modal-content {
+  background-clip: padding-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+  pointer-events: auto;
+  position: relative;
+  user-select: none;
+}
+
+.header {
+  display: flex;
+  margin-bottom: 10px;
+}

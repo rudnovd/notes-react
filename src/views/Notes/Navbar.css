@@ -1,0 +1,66 @@
+.navbar {
+  display: flex;
+  flex: 1 0 100%;
+  max-width: 100%;
+}
+
+.list-actions {
+  display: flex;
+  flex: 1 0 33.3%;
+  max-width: 33.3%;
+}
+
+.note-actions {
+  display: flex;
+  flex: 1 0 66.6%;
+  max-width: 66.6%;
+}
+
+.search-note-input {
+  height: 2rem;
+  border: 1px solid rgb(206, 212, 218);
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.delete-note {
+  margin-left: auto;
+}
+
+.note-actions {
+  justify-content: flex-end;
+}
+
+.new-note-button {
+  background: url('../../assets/icons/newNote.svg');
+}
+
+.delete-note-button {
+  background: url('../../assets/icons/trash.svg');
+}
+
+.login-button {
+  background: url('../../assets/icons/login.svg');
+}
+
+.logout-button {
+  background: url('../../assets/icons/logout.svg');
+}
+
+.new-note-button, .delete-note-button, .login-button, .logout-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  background-size: 2rem;
+  transition: opacity 0.25s;
+}
+
+.new-note-button:hover, .delete-note-button:hover, .login-button:hover, .logout-button:hover {
+  opacity: 0.5;
+}
