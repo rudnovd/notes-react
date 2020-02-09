@@ -1,3 +1,13 @@
+#vscode settings
+.vscode/
+
+#build directory
+build/
+
+#Firebase
+.firebase/
+.firebaserc
+
 # Logs
 logs
 *.log
@@ -102,5 +112,3 @@ dist
 
 # TernJS port file
 .tern-port
-
-.vscode
