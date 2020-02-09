@@ -6,7 +6,6 @@ build/
 
 #Firebase
 .firebase/
-.firebaserc
 
 # Logs
 logs
