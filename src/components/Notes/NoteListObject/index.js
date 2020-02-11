@@ -1,6 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './NoteListObject.css';
+
+NoteListObject.propTypes = {
+  noteData: PropTypes.object,
+  active: PropTypes.bool,
+  onClick: PropTypes.func.isRequired
+};
+
+NoteListObject.defaultProps = {
+  noteData: {
+    title: "",
+    text: ""
+  },
+  active: false,
+  onClick: () => {}
+};
 
 function NoteListObject(props) {
   let note

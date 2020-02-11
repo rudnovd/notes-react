@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import BaseButton from 'components/Base/BaseButton';
 import BaseModal from 'components/Base/BaseModal';
 
 import { resetPassword } from 'services/api/account';
 
 import './ResetPasswordModal.css';
+
+ResetPasswordModal.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onResetPassword: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
+ResetPasswordModal.defaultProps = {
+  show: false,
+  onResetPassword: () => {},
+  onClose: () => {}
+};
 
 function ResetPasswordModal(props) {
   const [email, setEmail] = useState("")
@@ -37,7 +50,7 @@ function ResetPasswordModal(props) {
   }
 
   return (
-    <BaseModal show={props.show} width="600px" onClose={() => props.onClose()}>
+    <BaseModal show={props.show} size="small" onClose={() => props.onClose()}>
       <div className="reset-password-modal">
         <form className="reset-password-form">
           <label htmlFor="input-email" className="label-email">Email:</label>

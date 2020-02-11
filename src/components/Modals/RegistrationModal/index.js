@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import BaseButton from 'components/Base/BaseButton';
 import BaseModal from 'components/Base/BaseModal';
 
 import { registration } from 'services/api/account';
 
 import './RegistrationModal.css';
+
+RegistrationModal.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onRegistration: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
+RegistrationModal.defaultProps = {
+  show: false,
+  onRegistration: () => {},
+  onClose: () => {}
+};
 
 function RegistrationModal(props) {
   const [email, setEmail] = useState("")
@@ -70,14 +83,14 @@ function RegistrationModal(props) {
       </form>
   } else {
     registrationModal = 
-    <>
+    <div className="successful-registration">
       <span>Account successfully registered.</span>
-      <BaseButton onClick={() => props.onClose()}>Login</BaseButton>
-    </>
+      <BaseButton className="return-login-button" onClick={() => props.onClose()}>Login</BaseButton>
+    </div>
   }
 
   return (
-    <BaseModal show={props.show} width="600px" onClose={() => props.onClose()}>
+    <BaseModal show={props.show} closeButtonHidden={registartionCompleted} size="small" onClose={() => props.onClose()}>
       <div className="registration-modal">
         { registrationModal }
       </div>

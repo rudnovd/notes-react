@@ -3,6 +3,16 @@ import PropTypes from 'prop-types';
 
 import './LoadingSpinner.css';
 
+LoadingSpinner.propTypes = {
+  width: PropTypes.string,
+  height: PropTypes.string,
+};
+
+LoadingSpinner.defaultProps = {
+  width: '1rem',
+  height: '1rem'
+};
+
 function LoadingSpinner(props) {
   if (!props.show) return null
   
@@ -18,9 +28,8 @@ function LoadingSpinner(props) {
         }}
       />
 
-      {
-        props.text && 
-        <div v-if="loadingText" className="loading-text">
+      {props.text && 
+        <div className="loading-text">
           <span>
             { props.text }
           </span>
@@ -30,16 +39,5 @@ function LoadingSpinner(props) {
     </div>
   )
 }
-
-LoadingSpinner.propTypes = {
-  width: PropTypes.string,
-  height: PropTypes.string,
-};
-
-LoadingSpinner.defaultProps = {
-  width: '1rem',
-  height: '1rem'
-};
-
 
 export default LoadingSpinner;

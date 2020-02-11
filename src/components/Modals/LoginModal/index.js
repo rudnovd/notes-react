@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import BaseButton from 'components/Base/BaseButton';
 import BaseModal from 'components/Base/BaseModal';
 
@@ -6,11 +7,38 @@ import { login } from 'services/api/account';
 
 import './LoginModal.css';
 
+LoginModal.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onLogin: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+  showRegistrationModal: PropTypes.func.isRequired,
+  showResetPasswordModal: PropTypes.func.isRequired
+};
+
+LoginModal.defaultProps = {
+  show: false,
+  onLogin: () => {},
+  onClose: () => {},
+  showRegistrationModal: () => {},
+  showResetPasswordModal: () => {}
+};
+
 function LoginModal(props) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
+
+  useEffect(() => {
+    console.log('a')
+    return () => {
+      console.log('unmount')
+      setEmail("")
+      setPassword("")
+      setError("")
+    }
+  }, [])
+
   function onLogin() {
     if (!email.length || !password.length) return
 
@@ -44,7 +72,7 @@ function LoginModal(props) {
   }
 
   return (
-    <BaseModal show={props.show} width="600px" onClose={() => props.onClose()} closeButtonHidden={true}>
+    <BaseModal show={props.show} size="small" onClose={() => props.onClose()} closeButtonHidden={true}>
       <div className="login-modal">
         <form className="login-form">
           <label htmlFor="input-email" className="label-email">Email:</label>
@@ -70,9 +98,9 @@ function LoginModal(props) {
           </BaseButton>
         </div>
 
-        <div className="forgot-password">
+        <div className="reset-password">
           <BaseButton className="button-link" onClick={() => props.showResetPasswordModal()}>
-            Forgot password?
+            Reset password
           </BaseButton>
         </div>
       </div>
