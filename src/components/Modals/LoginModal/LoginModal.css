@@ -1,6 +1,7 @@
 .login-modal {
   width: 340px;
   margin: auto;
+  max-width: 100%;
 }
 
 .label-email, .label-password {
@@ -32,7 +33,7 @@
   border: 1px solid rgb(0, 190, 50);
 }
 
-.registration, .forgot-password {
+.registration, .reset-password {
   text-align: center;
 }
 

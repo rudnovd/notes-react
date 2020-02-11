@@ -8,6 +8,11 @@
   margin-left: auto;
 }
 
+.close-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .close-button:hover .cross-first-line,
 .close-button:hover .cross-second-line {
   background-color: rgba(0, 0, 0, 0.7);

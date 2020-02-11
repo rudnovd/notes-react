@@ -1,6 +1,7 @@
 .registration-modal {
   width: 340px;
   margin: auto;
+  height: 100%;
 }
 
 .label-email, .label-password {
@@ -20,13 +21,27 @@
   margin-bottom: 1rem;
 }
 
-.button-registration { 
+.button-registration, .return-login-button { 
   background-color: rgb(0, 201, 50);
   border: 1px solid rgb(0, 201, 50);
   width: 100%;
 }
 
-.button-registration:hover {
+.button-registration:hover, .return-login-button:hover {
   background-color: rgb(0, 190, 50);
   border: 1px solid rgb(0, 190, 50);
+}
+
+.successful-registration {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+}
+
+.successful-registration :first-of-type {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
